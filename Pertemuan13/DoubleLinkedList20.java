@@ -83,12 +83,18 @@ public class DoubleLinkedList20 {
             System.out.println("List kosong, tidak bisa dihapus.");
             return;
         }
+
+        System.out.println("Data yang terhapus adalah: ");
+        head.data.tampil();
+
         if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
             head.prev = null;
         }
+
+        System.out.println("Data sudah berhasil dihapus.");
     }
 
     public void removeLast() {
@@ -102,5 +108,16 @@ public class DoubleLinkedList20 {
             tail = tail.prev;
             tail.next = null;
         }
+    }
+
+    public Node20 search(String nim) {
+        Node20 current = head;
+        while (current != null) {
+            if (current.data.nim.equals(nim)) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
     }
 }
