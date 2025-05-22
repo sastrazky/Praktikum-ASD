@@ -44,8 +44,8 @@ public class DLLMain {
                     Mahasiswa20 mhs = inputMahasiswa(scan);
                     list.addLast(mhs);
                 }
-                // case 3 -> list.removeFirst(); // Aktifkan penghapusan dari awal
-                // case 4 -> list.removeLast(); // Aktifkan penghapusan dari akhir
+                case 3 -> list.removeFirst(); // Aktifkan penghapusan dari awal
+                case 4 -> list.removeLast(); // Aktifkan penghapusan dari akhir
                 case 5 -> list.print();
                 // case 6 -> {
                 //     System.out.print("Masukkan NIM yang dicari: ");
