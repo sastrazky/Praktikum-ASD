@@ -120,4 +120,137 @@ public class DoubleLinkedList20 {
         }
         return null;
     }
+
+    public void add(int index, Mahasiswa20 data) {
+    if (index < 0) {
+        System.out.println("Indeks tidak valid.");
+        return;
+    }
+    if (index == 0) {
+        addFirst(data);
+        return;
+    }
+
+    Node20 newNode = new Node20(data);
+    Node20 current = head;
+    int count = 0;
+
+    while (current != null && count < index - 1) {
+        current = current.next;
+        count++;
+    }
+
+    if (current == null) {
+        System.out.println("Indeks melebihi ukuran list.");
+        return;
+    }
+
+    newNode.next = current.next;
+    newNode.prev = current;
+    if (current.next != null) {
+        current.next.prev = newNode;
+    }
+    current.next = newNode;
+
+    if (newNode.next == null) {
+        tail = newNode;
+    }
+}
+
+    public void removeAfter(String keyNim) {
+    Node20 current = search(keyNim);
+    if (current == null || current.next == null) {
+        System.out.println("Tidak ada node setelah NIM " + keyNim);
+        return;
+    }
+
+    Node20 nodeToRemove = current.next;
+    current.next = nodeToRemove.next;
+    if (nodeToRemove.next != null) {
+        nodeToRemove.next.prev = current;
+    } else {
+        tail = current;
+    }
+}
+
+public void remove(int index) {
+    if (index < 0 || isEmpty()) {
+        System.out.println("Indeks tidak valid atau list kosong.");
+        return;
+    }
+    if (index == 0) {
+        removeFirst();
+        return;
+    }
+
+    Node20 current = head;
+    int count = 0;
+
+    while (current != null && count < index) {
+        current = current.next;
+        count++;
+    }
+
+    if (current == null) {
+        System.out.println("Indeks melebihi ukuran list.");
+        return;
+    }
+
+    if (current.next != null) {
+        current.next.prev = current.prev;
+    } else {
+        tail = current.prev;
+    }
+    if (current.prev != null) {
+        current.prev.next = current.next;
+    }
+}
+
+public void getFirst() {
+    if (isEmpty()) {
+        System.out.println("List kosong.");
+        return;
+    }
+    head.data.tampil();
+}
+
+public void getLast() {
+    if (isEmpty()) {
+        System.out.println("List kosong.");
+        return;
+    }
+    tail.data.tampil();
+}
+
+public void getIndex(int index) {
+    if (index < 0 || isEmpty()) {
+        System.out.println("Indeks tidak valid atau list kosong.");
+        return;
+    }
+
+    Node20 current = head;
+    int count = 0;
+
+    while (current != null && count < index) {
+        current = current.next;
+        count++;
+    }
+
+    if (current == null) {
+        System.out.println("Indeks melebihi ukuran list.");
+        return;
+    }
+
+    current.data.tampil();
+}
+
+public int size() {
+    int count = 0;
+    Node20 current = head;
+    while (current != null) {
+        count++;
+        current = current.next;
+    }
+    return count;
+}
 }
