@@ -52,8 +52,8 @@ public class DoubleLinkedList20 {
 
         // jika current adalah tail, cukup tambahkan di akhir
         if (current == tail) {
-            current.next = newMode;
-            newMode.prev = current;
+            current.next = newNode;
+            newNode.prev = current;
             tail = newNode;
         } else {
             // Sisipkan di tengah
@@ -67,8 +67,12 @@ public class DoubleLinkedList20 {
     }
 
     public void print() {
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
         Node20 current = head;
-        while (current != null) {
+        while (current == null) {
             current.data.tampil();
             current = current.next;
         }
