@@ -1,8 +1,8 @@
-class BBM {
+class BBM_20 {
     String namaBBM;
     double hargaPerLiter;
 
-    BBM(String namaBBM, double harga) {
+    BBM_20(String namaBBM, double harga) {
         this.namaBBM = namaBBM;
         this.hargaPerLiter = harga;
     }

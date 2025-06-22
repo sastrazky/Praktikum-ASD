@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main_20 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        SPBUSistem spbu = new SPBUSistem();
+        SPBUSistem_20 spbu = new SPBUSistem_20();
 
         while (true) {
             System.out.println("-- Menu SPBU --");

@@ -1,10 +1,10 @@
-class TransaksiPengisian {
-    Kendaraan kendaraan;
-    BBM bbm;
+class TransaksiPengisian_20 {
+    Kendaraan_20 kendaraan;
+    BBM_20 bbm;
     double liter;
     double totalBayar;
 
-    TransaksiPengisian(Kendaraan kendaraan, BBM bbm, double liter) {
+    TransaksiPengisian_20(Kendaraan_20 kendaraan, BBM_20 bbm, double liter) {
         this.kendaraan = kendaraan;
         this.bbm = bbm;
         this.liter = liter;

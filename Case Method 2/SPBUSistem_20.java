@@ -1,13 +1,13 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class SPBUSistem {
-    LinkedList<Kendaraan> antrianKendaraan = new LinkedList<>();
-    Queue<TransaksiPengisian> riwayatTransaksi = new LinkedList<>();
+class SPBUSistem_20 {
+    LinkedList<Kendaraan_20> antrianKendaraan = new LinkedList<>();
+    Queue<TransaksiPengisian_20> riwayatTransaksi = new LinkedList<>();
     
     void tambahAntrian(String plat, String tipe, String merk) {
-        Kendaraan kendaraan = new Kendaraan(plat, tipe, merk);
-        antrianKendaraan.addLast(kendaraan);
+        Kendaraan_20 kendaraan_20 = new Kendaraan_20(plat, tipe, merk);
+        antrianKendaraan.addLast(kendaraan_20);
         System.out.println(">> Kendaraan " + plat + " masuk ke dalam antrian.");
     }
 
@@ -17,7 +17,7 @@ class SPBUSistem {
             return;
         }
         System.out.println("-- Antrian Kendaraan --");
-        for (Kendaraan k : antrianKendaraan) {
+        for (Kendaraan_20 k : antrianKendaraan) {
             k.tampilkanInformasi();
             System.out.println();
         }
@@ -32,9 +32,9 @@ class SPBUSistem {
             System.out.println(">> Antrian kosong, tidak ada kendaraan untuk dilayani.");
             return;
         }
-        Kendaraan kendaraanDilayani = antrianKendaraan.removeFirst();
-        BBM bbm = new BBM(namaBBM, hargaPerLiter);
-        TransaksiPengisian transaksi = new TransaksiPengisian(kendaraanDilayani, bbm, liter);
+        Kendaraan_20 kendaraanDilayani = antrianKendaraan.removeFirst();
+        BBM_20 bbm = new BBM_20(namaBBM, hargaPerLiter);
+        TransaksiPengisian_20 transaksi = new TransaksiPengisian_20(kendaraanDilayani, bbm, liter);
         riwayatTransaksi.add(transaksi);
         
         System.out.println(">> Kendaraan " + kendaraanDilayani.platNomor + " telah dilayani.");
@@ -47,7 +47,7 @@ class SPBUSistem {
             return;
         }
         System.out.println("-- Riwayat Transaksi --");
-        for (TransaksiPengisian t : riwayatTransaksi) {
+        for (TransaksiPengisian_20 t : riwayatTransaksi) {
             System.out.println(t.kendaraan.platNomor + ": Rp " + t.totalBayar);
         }
     }
